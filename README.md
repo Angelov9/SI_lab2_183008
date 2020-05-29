@@ -10,9 +10,9 @@
 ## Циколматска комплексонст 
 Цикломатската комплексност на овој Control Flow Graph е 8, истат е добиена 
 преку трите формули:
-R = 8 \n
-E - N + 2 = 28 - 22 + 2 = 8 \n
-P + 1 = 7 + 1 = 8
+1. R = 8
+2. E - N + 2 = 28 - 22 + 2 = 8
+3. P + 1 = 7 + 1 = 8
 ## Тест случаи според критериумот Every path и Every branch
 1. user = null, allUsers = new List()
 2. user = (null, null,  null), allUsers = new List()
