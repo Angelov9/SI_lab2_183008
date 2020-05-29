@@ -1,3 +1,5 @@
+package java;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -69,5 +71,24 @@ class SILab2Test {
 // 1=2 // 2=4 // 5=7 // 7=8 // 8=10 // 10=11.1 // 11.1=11.2 // 11.2=12 // 12=13 // 12=14 // 13=14 // 14=15 // 14=16 // 15=16 // 16=11.3 // 11.3=11.2 // 11.2=17 // 17=19 // 19=20
         assertTrue(siLab2.function(user5, allUsers));
 
+    }
+
+    @Test
+    public void multipleConditionTest(){
+
+        RuntimeException re;
+
+        allUsers.add("Filip");
+        // true i nebitno
+        re = assertThrows(RuntimeException.class, () -> siLab2.function(user1, allUsers));
+        assertTrue(re.getMessage().contains("User already exists!"));
+
+        // false i true
+        re = assertThrows(RuntimeException.class, () -> siLab2.function(user2, allUsers));
+        assertTrue(re.getMessage().contains("User already exists!"));
+
+        allUsers.remove(1);
+        // false i false
+        assertTrue(siLab2.function(user5, allUsers));
     }
 }
