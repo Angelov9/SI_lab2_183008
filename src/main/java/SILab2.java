@@ -28,30 +28,30 @@ class User {
 
 public class SILab2 {
 
-    public boolean function (User user, List<String> allUsers) {
-        if (user==null) {
-            throw new RuntimeException("The user argument is not initialized!");
+    public boolean function (User user, List<String> allUsers) { //1
+        if (user==null) { //2
+            throw new RuntimeException("The user argument is not initialized!"); //3
         }
-        else {
-            if (user.getUsername()==null || allUsers.contains(user.getUsername())) {
-                throw new RuntimeException("User already exists!");
+        else { //4
+            if (user.getUsername()==null || allUsers.contains(user.getUsername())) { //5
+                throw new RuntimeException("User already exists!"); //6
             }
-            else {
-                if (user.getEmail()==null)
-                    return false;
-                boolean atChar = false, dotChar = false;
-                for (int i=0;i<user.getEmail().length();i++) {
-                    if (user.getEmail().charAt(i)=='@')
-                        atChar = true;
-                    if (atChar && user.getEmail().charAt(i)=='.') {
-                        dotChar = true;
+            else { //7
+                if (user.getEmail()==null) //8
+                    return false; //9
+                boolean atChar = false, dotChar = false; //10
+                for (int i=0;i<user.getEmail().length();i++) { //11
+                    if (user.getEmail().charAt(i)=='@') //12
+                        atChar = true; //13
+                    if (atChar && user.getEmail().charAt(i)=='.') { //14
+                        dotChar = true; //15
                     }
-                }
-                if (!atChar || !dotChar) {
-                    return false;
+                } //16
+                if (!atChar || !dotChar) { //17
+                    return false; //18
                 }
             }
         }
-        return true;
-    }
+        return true; //19
+    } //20
 }
